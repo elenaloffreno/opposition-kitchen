@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Opposition Kitchen</title>
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+    </head>
+<body>
+    <div id="cursor"></div>
+
+    <header>
+        <h1>
+            <!-- title with wiggle effect -->
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">O</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">P</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">P</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">O</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">S</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">I</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">T</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">I</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">O</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">N</span>
+        </h1>
+        <h1>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">K</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">I</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">T</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">C</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">H</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">E</span>
+            <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">N</span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Get Cooking</a></li>
+                <li><a href="submissions.html">Submit a Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+                <div id="scroll-container">
+                    <div id="scroll-text">
+                    <h1> Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ </h1>
+                    </div>
+                </div> 
+            <p>Thank you for your interest in joining the kitchen!<br><br>Because this project has been structured as an open-ended response to worldly affairs, feel free to be creative and personal in your responses, with the objectivity of telling a nonfictional story.<br><br>Images can be iPhone photos, illustrations, scans of your great-aunt's notes, whatever you feel is neccessary in portraying your feelings regarding your dish.</p>
+            <p>**Please note: I will reach out with how to share your images once I receive your submission form**</p>
+            <form action="https://formspree.io/f/xpwaaklq" method="post" enctype="multipart/form-data">
+                <!-- form fields here -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipeName">Recipe Name</label>
+                    <input type="text" id="recipeName" name="recipeName" required>
+                </div>
+            <div class="form-group">
+                <label for="country">Recipe Country of Origin</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="instructions">Instructions</label>
+                <textarea id="instructions" name="instructions" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="politicalContext">Political Context of the Dish as of Today</label>
+                <textarea id="politicalContext" name="politicalContext" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="memory">Your Favorite Memory with the Dish</label>
+                <textarea id="memory" name="memory" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="resources">Useful Resources to Share with Dish</label>
+                <textarea id="resources" name="resources" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-section">
+        <div class="social-links">
+            <a href="https://www.instagram.com/elenaloffreno/"><img src="images/instagram-icon.jpg" alt="Instagram"></a>
+            <a href="mailto:loffrenoelena@gmail.com"><img src="images/icons8-letter-50 copy.png" alt="Email"></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Elena Loffreno. All rights reserved.</p>  
+    </div>
+</footer>
+</body>
+</html>

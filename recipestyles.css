@@ -1,0 +1,277 @@
+:root {
+    --primary-color: #e3312b;
+    --secondary-color: #149954;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --highlight-color: #ffff;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --font-family: 'baskerville', Arial, sans-serif;
+    --max-width: 1200px;
+}
+
+html, body {
+    overflow-x: hidden; 
+    overflow-y: auto; 
+}
+
+body, a, input, textarea, button {
+    cursor: none;
+}
+
+/* general styling */
+body {
+    margin: 0;
+    font-family: "baskerville";
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+@font-face {
+    font-family: "cookbook-title", Arial, sans-serif;
+    src: url('/fonts/cookbook-title/CookbookTitle.ttf');
+}
+
+header {
+    background: var(--highlight-color);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+h1 {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "cookbook-title";
+    letter-spacing: 10mm;
+}
+
+.title {
+    display: inline-block;
+    color: var(--primary-color);
+    transition: transform 0.2s, color var(--transition-duration);
+}
+
+.title:hover {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+}
+
+.wiggle {
+    animation: wiggle 0.75s ease infinite alternate;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+main h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+/*links*/
+
+a {
+    color: var(--primary-color); 
+    text-decoration: none; 
+    transition: color 0.3s, text-decoration 0.3s; 
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline; 
+}
+
+a:active {
+    color: darken(var(--primary-color), 10%); 
+}
+
+/* footer styling */
+footer {
+    background: var(--highlight-color);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    margin-top: auto;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links img {
+    margin-left: 1.5mm;
+    margin-right: 1.5mm;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-links a img:hover {
+    opacity: 0.5;
+}
+
+.footer-bottom p {
+    margin: 10px 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* cursor styling */
+
+* {
+    cursor: none;
+}
+
+#cursor {
+    position: fixed;
+    background-color: #e3312b;
+    pointer-events: none;
+    border-radius: 50%;
+    transition: width 0.2s linear, height 0.2s linear;
+    z-index: 9999;
+}
+
+/* recipe sections */
+
+.custom-grid-container {
+    display: grid;
+    grid-template-areas: 
+        'custom-header custom-header custom-header'
+        'custom-menu custom-main custom-right'
+        'custom-footer custom-footer custom-footer';
+    grid-gap: 10px;
+    padding: 20px;
+    max-width: auto; 
+
+}
+
+.custom-grid-container > div {
+    background-color: #dddddd00;
+    text-align: center;
+    border: 1px solid #00000000;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: top; 
+    align-items: center; 
+    z-index: 1; 
+}
+
+.custom-grid-container h2 {
+    margin-bottom: -2mm;
+}
+
+.custom-grid-container ul {
+    margin-left: -10mm;
+    list-style-type: none;
+}
+
+.custom-header {
+    grid-area: custom-header;
+    height: 50%; 
+}
+
+.custom-header {
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+.custom-menu {
+    grid-area: custom-menu;
+    width: 70%;
+    
+}
+
+.custom-menu img {
+    width: 100%;
+    padding-top: 2.5%;
+}
+
+.custom-main {
+    grid-area: custom-main;
+    max-width: 800px; 
+    margin-left: -6.25em;
+    margin-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.custom-right {
+    grid-area: custom-right;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    max-width: 800px; 
+    margin-left: -1em;
+    margin-right: 0;
+}
+
+.custom-right img {
+    width: 100%;
+    padding-bottom: 2.5%;
+}
+
+
+.custom-footer {
+    grid-area: custom-footer;
+    width: auto;
+    height: auto; 
+    text-align: center; 
+}
+
+.custom-footer li {
+    list-style-type: none;
+}
+
+.custom-main p {
+    text-align: left;
+}
+
