@@ -112,12 +112,12 @@ main {
 }
 
 main h2 {
-    font-size: 12px;
-    margin-top: 12px;
+    font-size: 14pt;
+    margin-top: 14pt;
 }
 
 main p {
-    font-size: 16px;
+    font-size: 14pt;
     line-height: 1.25;
 }
 
