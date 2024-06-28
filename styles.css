@@ -10,6 +10,7 @@
     --max-width: 1200px;
 }
 
+/* general styling */
 html, body {
     overflow-x: hidden; /* prevent horizontal scrolling */
     overflow-y: auto; /* allow vertical scrolling */
@@ -19,7 +20,6 @@ body, a, input, textarea, button {
     cursor: none;
 }
 
-/* general styling */
 body {
     margin: 0;
     font-family: "baskerville";
@@ -121,8 +121,7 @@ main p {
     line-height: 1.25;
 }
 
-/*links*/
-
+/* links */
 a {
     color: var(--primary-color); 
     text-decoration: none; 
@@ -136,7 +135,6 @@ a:hover {
 a:active {
     color: darken(var(--primary-color), 10%); 
 }
-
 
 /* footer styling */
 footer {
@@ -176,7 +174,6 @@ footer {
 }
 
 /* cursor styling */
-
 * {
     cursor: none;
 }
@@ -190,15 +187,12 @@ footer {
     z-index: 9999;
 }
 
-
 /* directory */
-
 .directory {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
-
 
 .directory h1 {
     text-align: center;
@@ -253,7 +247,7 @@ footer {
     color: #555;
 }
 
-/*submission form*/
+/* submission form */
 .container {
     background: linear-gradient(135deg, #ffffff, #f0f0f0);
     padding: 40px;
@@ -310,8 +304,6 @@ footer {
     background: rgba(255, 255, 255, 1);
 }
 
-
-
 button[type="submit"] {
     width: 100%;
     padding: 15px;
@@ -330,7 +322,6 @@ button[type="submit"]:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-
 }
 
 button[type="submit"]:hover,
@@ -342,23 +333,18 @@ button[type="submit"]:hover {
     background-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    
 }
 
-
-
 /* scrolling text */
-
 #scroll-container {
     border: 3px solid rgba(0, 0, 0, 0);
     border-radius: 1px;
-    overflow:visible;
+    overflow: visible;
     margin-bottom: -1em;
     white-space: nowrap;
-  }
-  
-  #scroll-text {
-    /* animation properties */
+}
+
+#scroll-text {
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
@@ -366,21 +352,21 @@ button[type="submit"]:hover {
     -moz-animation: my-animation 20s linear infinite;
     -webkit-animation: my-animation 20s linear infinite;
     animation: my-animation 20s linear infinite;
-  }
-  
-  /* for Firefox */
-  @-moz-keyframes my-animation {
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
     from { -moz-transform: translateX(100%); }
     to { -moz-transform: translateX(-100%); }
-  }
+}
   
-  /* for Chrome */
-  @-webkit-keyframes my-animation {
+/* for Chrome */
+@-webkit-keyframes my-animation {
     from { -webkit-transform: translateX(100%); }
     to { -webkit-transform: translateX(-100%); }
-  }
+}
   
-  @keyframes my-animation {
+@keyframes my-animation {
     from {
       -moz-transform: translateX(100%);
       -webkit-transform: translateX(100%);
@@ -392,3 +378,32 @@ button[type="submit"]:hover {
       transform: translateX(-100%);
     }
 }
+
+/* landscape mode (mobile only) */
+@media (max-width: 800px) {
+    #rotate-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: var(--highlight-color);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        z-index: 1000;
+        width: 80%;
+        font-family: var(--font-family);
+        box-shadow: var(--box-shadow);
+    }
+
+    #content {
+        transition: none
+    }
+
+    .blur {
+        filter: blur(10px);
+    }
+}
+
