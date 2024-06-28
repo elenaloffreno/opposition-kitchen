@@ -275,3 +275,32 @@ footer {
     text-align: left;
 }
 
+
+/* landscape mode (mobile only) */
+@media (max-width: 800px) {
+    #rotate-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: var(--highlight-color);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        z-index: 1000;
+        width: 80%;
+        font-family: var(--font-family);
+        box-shadow: var(--box-shadow);
+    }
+
+    #content {
+        transition: none
+    }
+
+    .blur {
+        filter: blur(10px);
+    }
+}
+
