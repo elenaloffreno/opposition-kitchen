@@ -114,6 +114,7 @@ main {
 main h2 {
     font-size: 16px;
     margin-top: 16px;
+    line-height: 1.25;
 }
 
 main p {
