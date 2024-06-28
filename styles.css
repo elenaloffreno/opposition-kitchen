@@ -112,13 +112,13 @@ main {
 }
 
 main h2 {
-    font-size: 16px;
-    margin-top: 16px;
+    font-size: 1em;
+    margin-top: 1em;
     line-height: 1.25;
 }
 
 main p {
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.25;
 }
 
@@ -239,7 +239,7 @@ footer {
 
 .recipe-info h2 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1em;
     color: #333;
 }
 
