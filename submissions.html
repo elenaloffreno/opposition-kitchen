@@ -10,13 +10,16 @@
         <link rel="stylesheet" href="styles.css">
         <script src="scripts.js" defer></script>
     </head>
+
 <body>
+
     <div id="cursor"></div>
     <div id="rotate-message">
         Please rotate your device to landscape mode for a better experience. 
     </div>
 
     <header>
+
         <h1>
             <!-- title with wiggle effect -->
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">O</span>
@@ -30,6 +33,8 @@
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">O</span>
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">N</span>
         </h1>
+
+
         <h1>
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">K</span>
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">I</span>
@@ -39,6 +44,7 @@
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">E</span>
             <span class="title" onmouseover="this.classList.add('wiggle')" onmouseout="this.classList.remove('wiggle')">N</span>
         </h1>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -48,68 +54,86 @@
         </nav>
     </header>
 
-    <main id="content">
-        <div class="container">
-                <div id="scroll-container">
-                    <div id="scroll-text">
-                    <h1> Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ Submit Your Recipe. Feed My Mind. ⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖ </h1>
-                    </div>
-                </div> 
-            <p>Thank you for your interest in joining the kitchen!<br><br>Because this project has been structured as an open-ended response to worldly affairs, feel free to be creative and personal in your responses, with the objectivity of telling a nonfictional story.<br><br>Images can be iPhone photos, illustrations, scans of your great-aunt's notes, whatever you feel is neccessary in portraying your feelings regarding your dish.</p>
-            <p>**Please note: I will reach out with how to share your images once I receive your submission form**</p>
-            <form action="https://formspree.io/f/xpwaaklq" method="post" enctype="multipart/form-data">
-                <!-- form fields here -->
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="recipeName">Recipe Name</label>
-                    <input type="text" id="recipeName" name="recipeName" required>
-                </div>
-            <div class="form-group">
-                <label for="country">Recipe Country of Origin</label>
-                <input type="text" id="country" name="country" required>
-            </div>
-            <div class="form-group">
-                <label for="ingredients">Ingredients</label>
-                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="instructions">Instructions</label>
-                <textarea id="instructions" name="instructions" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="politicalContext">Political Context of the Dish as of Today</label>
-                <textarea id="politicalContext" name="politicalContext" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="memory">Your Favorite Memory with the Dish</label>
-                <textarea id="memory" name="memory" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="resources">Useful Resources to Share with Dish</label>
-                <textarea id="resources" name="resources" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit" id="submitBtn">Submit</button>
-        </form>
-    </div>
-</main>
 
-<footer>
-    <div class="footer-section">
-        <div class="social-links">
-            <a href="https://www.instagram.com/elenaloffreno/"><img src="images/instagram-icon.jpg" alt="Instagram"></a>
-            <a href="mailto:loffrenoelena@gmail.com"><img src="images/icons8-letter-50 copy.png" alt="Email"></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Elena Loffreno. All rights reserved.</p>  
-    </div>
-</footer>
-</body>
-</html>
+    <main id="content">
+        <section id="come-back-soon">
+            <h2>Check back soon!</h2>
+
+        </section>
+
+        
+      <!--  <body>
+            <main id="content">
+            <div class="directory">
+                <ul class="recipe-list">
+
+                    <li>
+                        <a href="balkancrepes.html">
+                            <div class="recipe">
+                                <img src="TKTK" alt="Recipe Image">
+                                <div class="recipe-info">
+                                    <h2>Palačinke (Balkan Crepes)</h2>
+                                    <p>I was raised eating crepes regularly in my Albanian household. It was one of my favorite foods growing up and still is today.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tomatoegg.html">
+                            <div class="recipe">
+                                <img src="TKTK" alt="Recipe Image">
+                                <div class="recipe-info">
+                                    <h2>Tomato & Egg</h2>
+                                    <p>Tomato and Egg is a mix of classic Chinese stir fry with eggs combined with western influences from the tomato. Popularized in Shanghai in the 1920-30's, this quickly became an important comfort meal for lots of Chinese children.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="rosewaterlemonade.html">
+                            <div class="recipe">
+                                <img src="images/rosewaterlemonade/ESL00853.jpg" alt="Recipe Image">
+                                <div class="recipe-info">
+                                    <h2>Rosewater Mint Lemonade</h2>
+                                    <p>I can never, ever, everrrr have people over and not craft a fun cocktail. This creative drink is an unequivocal rendition of my childhood coming full circle in my 20s. Crafted from the dried mint that my mom gifted me and dedicated to the memory of hot summer days sipping premade lemonade that my grandma splashed some rosewater into.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="manakeesh.html">
+                            <div class="recipe">
+                                <img src="images/manakeesh/idfk-5.jpg" alt="Recipe Image">
+                                <div class="recipe-info">
+                                    <h2>My Mom's Manakeesh</h2>
+                                    <p>One of the pinnacle dishes of my childhood, maybe even my existence. For as long as I can remember, my mom has always made it with pre-made pizza dough—an arab pizza. Being half-Italian and half-Palestinian, this simple dish has always felt like my existence mutated into a culinary masterpiece.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+-->
+
+                    <!-- add more recipes as needed -->
+                </ul>
+            </div>
+    </main>
+
+        <footer>
+            <div class="footer-section">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/elenaloffreno/"><img src="images/instagram-icon.jpg" alt="Instagram"></a>
+                    <a href="mailto:loffrenoelena@gmail.com"><img src="images/icons8-letter-50 copy.png" alt="Email"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elena Loffreno. All rights reserved.</p>  
+            </div>
+        </footer>
+    </body>
+
+    </html>
+
