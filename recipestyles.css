@@ -10,15 +10,14 @@
 }
 
 html, body {
-    overflow-x: hidden; 
-    overflow-y: auto; 
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body, a, input, textarea, button {
     cursor: none;
 }
 
-/* general styling */
 body {
     margin: 0;
     font-family: "baskerville";
@@ -111,24 +110,21 @@ main p {
     line-height: 1.25;
 }
 
-/*links*/
-
 a {
-    color: var(--primary-color); 
-    text-decoration: none; 
-    transition: color 0.3s, text-decoration 0.3s; 
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
 }
 
 a:hover {
     color: var(--secondary-color);
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 a:active {
-    color: darken(var(--primary-color), 10%); 
+    color: darken(var(--primary-color), 10%);
 }
 
-/* footer styling */
 footer {
     background: var(--highlight-color);
     width: 100%;
@@ -164,8 +160,6 @@ footer {
     font-size: 14px;
 }
 
-/* cursor styling */
-
 * {
     cursor: none;
 }
@@ -179,34 +173,42 @@ footer {
     z-index: 9999;
 }
 
-/* recipe sections */
-
 .custom-grid-container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         'custom-header custom-header custom-header'
         'custom-menu custom-main custom-right'
-        'custom-footer custom-footer custom-footer';
+        'custom-menu custom-footer custom-right';
+
     grid-gap: 10px;
     padding: 20px;
-    max-width: auto; 
+    box-sizing: border-box;
+}
 
+.custom-header,
+.custom-menu,
+.custom-right,
+.custom-main,
+.custom-footer {
+    margin: 0;
+    padding: 0;
 }
 
 .custom-grid-container > div {
     background-color: #dddddd00;
     text-align: center;
     border: 1px solid #00000000;
-    height: 100%; 
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: top; 
-    align-items: center; 
-    z-index: 1; 
+    align-items: center;
+    z-index: 1;
+    box-sizing: border-box;
 }
 
 .custom-grid-container h2 {
     margin-bottom: -2mm;
+    justify-content: center;
 }
 
 .custom-grid-container ul {
@@ -216,19 +218,31 @@ footer {
 
 .custom-header {
     grid-area: custom-header;
-    height: 50%; 
+    height: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
 }
 
-.custom-header {
-    margin-left: 6em;
-    margin-right: 6em;
+.custom-header h1 {
+    font: Baskerville;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: .04em;
 }
 
 .custom-menu {
     grid-area: custom-menu;
-    width: 70%;
-    
+    max-width: 800px;
+    width: 80%;
+    box-sizing: border-box;
+    justify-content: top;
 }
+
 
 .custom-menu img {
     width: 100%;
@@ -237,21 +251,21 @@ footer {
 
 .custom-main {
     grid-area: custom-main;
-    max-width: 800px; 
-    margin-left: -6.25em;
-    margin-right: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
+    max-width: 800px;
+    width: 110%;
+    box-sizing: border-box;
+    margin-left: -15%;
+    margin-right: 5em;
+    justify-content: top;
 }
 
 .custom-right {
     grid-area: custom-right;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    max-width: 800px; 
-    margin-left: -1em;
-    margin-right: 0;
+    max-width: 800px;
+    width: 110%;
+    box-sizing: border-box;
+    margin-left: -10%;
+    justify-content: top;
 }
 
 .custom-right img {
@@ -259,12 +273,12 @@ footer {
     padding-bottom: 2.5%;
 }
 
-
 .custom-footer {
     grid-area: custom-footer;
-    width: auto;
-    height: auto; 
-    text-align: center; 
+    max-width: 800px;
+    width: 110%;
+    box-sizing: border-box;
+    margin-left: -20%;
 }
 
 .custom-footer li {
@@ -275,8 +289,6 @@ footer {
     text-align: left;
 }
 
-
-/* landscape mode (mobile only) */
 @media (max-width: 800px) {
     #rotate-message {
         display: none;
@@ -296,11 +308,10 @@ footer {
     }
 
     #content {
-        transition: none
+        transition: none;
     }
 
     .blur {
         filter: blur(10px);
     }
 }
-

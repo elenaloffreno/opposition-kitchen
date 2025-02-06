@@ -2,9 +2,9 @@
 :root {
     --primary-color: #e3312b;
     --secondary-color: #149954;
-    --background-color: #f5f5f5;
+    --background-color:#f3ead79a;
     --text-color: #333;
-    --highlight-color: #ffff;
+    --highlight-color: #f3ead7d3;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --font-family: 'baskerville', Arial, sans-serif;
     --max-width: 1200px;
@@ -32,8 +32,8 @@ body {
 }
 
 @font-face {
-    font-family: "cookbook-title", Arial, sans-serif;
-    src: url('/fonts/cookbook-title/CookbookTitle.ttf');
+    font-family: "handwritten!", Arial, sans-serif;
+    src: url('/fonts/handwritten!/vertopal.com_Handwritten!.ttf');
 }
 
 header {
@@ -49,10 +49,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
-    font-weight: 700;
-    font-family: "cookbook-title";
-    letter-spacing: 10mm;
+    font-size: 50px;
+    font-family: "handwritten!";
+    letter-spacing: 6mm;
+    padding: 5px;
 }
 
 .title {
@@ -77,7 +77,7 @@ h1 {
 
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: .75em;
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -92,6 +92,7 @@ nav ul li a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.25em;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color var(--transition-duration), color var(--transition-duration);
@@ -99,7 +100,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: var(--secondary-color);
-    color: var(--highlight-color);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -112,13 +113,17 @@ main {
 }
 
 main h2 {
-    font-size: 1em;
-    margin-top: 1em;
-    line-height: 1.25;
+    font-size: 1.3em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: .5em;
+    font-family: "handwritten!";
+    letter-spacing: -6.25px;
+    word-spacing: 20px;
 }
 
 main p {
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.25;
 }
 
@@ -169,9 +174,12 @@ footer {
 }
 
 .footer-bottom p {
+    font-family: "handwritten!", "baskerville";
+    font-size: small;
     margin: 10px 0 0;
     color: #666;
-    font-size: 14px;
+    letter-spacing: -.32em;
+    word-spacing: 1em
 }
 
 /* cursor styling */
@@ -238,9 +246,13 @@ footer {
 }
 
 .recipe-info h2 {
-    margin: 0;
-    font-size: 1em;
-    color: #333;
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: .5em;
+    font-family: "handwritten!";
+    letter-spacing: -6.25px;
+    word-spacing: 20px;
 }
 
 .recipe-info p {
@@ -345,15 +357,21 @@ button[type="submit"]:hover {
     white-space: nowrap;
 }
 
+
 #scroll-text {
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
-    
     -moz-animation: my-animation 20s linear infinite;
     -webkit-animation: my-animation 20s linear infinite;
     animation: my-animation 20s linear infinite;
 }
+
+#scroll-text h1 {
+    letter-spacing: .01em;
+    word-spacing: .5em;
+}
+
 
 /* for Firefox */
 @-moz-keyframes my-animation {
