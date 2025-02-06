@@ -33,7 +33,7 @@ body {
 
 @font-face {
     font-family: "handwritten!", Arial, sans-serif;
-    src: url('/fonts/handwritten!/vertopal.com_Handwritten!.ttf');
+    src: url('/fonts/'/fonts/vertopal.com_Handwritten!.ttf');
 }
 
 header {
