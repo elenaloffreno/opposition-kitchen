@@ -6,7 +6,7 @@
     --text-color: #333;
     --highlight-color: #f1f2f2;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --font-family: 'baskerville', Arial, sans-serif;
+    --font-family: 'handwritten!','baskerville', Arial, sans-serif;
     --max-width: 1200px;
 }
 
@@ -403,9 +403,9 @@ button[type="submit"]:hover {
     body {
         font-size: 16px; 
         padding-top: 10px;
-        overflow-x: hidden; 
+        overflow-x: hidden;
+        font-family: "handwritten!", Arial, sans-serif;
     }
-
 
     main#content {
         box-sizing: border-box;
