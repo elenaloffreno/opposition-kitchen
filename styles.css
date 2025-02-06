@@ -404,7 +404,6 @@ button[type="submit"]:hover {
         font-size: 16px; 
         padding-top: 10px;
         overflow-x: hidden;
-        font-family: "handwritten!", Arial, sans-serif;
     }
 
     main#content {
@@ -430,6 +429,7 @@ button[type="submit"]:hover {
         font-size: 30px; 
         letter-spacing: 1mm;
         word-wrap: break-word;
+        font-family: "handwritten!", Arial, sans-serif;
     }
 
     main h2 {
@@ -439,6 +439,7 @@ button[type="submit"]:hover {
         text-align: center; 
         margin: 15px 0; 
         word-wrap: break-word; 
+        font-family: "handwritten!", Arial, sans-serif;
     }
 
     nav ul {
