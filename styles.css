@@ -399,25 +399,37 @@ button[type="submit"]:hover {
 }
 
 /* Improve Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     body {
         font-size: 16px; 
-        padding: 16px;
+        padding-top: 10px;
         overflow-x: hidden; 
     }
 
+
+    main#content {
+        box-sizing: border-box;
+      }
+      
+      img.video {
+        display: block;
+      }
+
+
     header {
-        padding: 10px;
         background-color: var(--highlight-color);
         width: 100%;
         max-width: 100%; 
-        margin: auto; 
+        padding-top: 10x;
+        padding-left: 0;
+        margin-top: -10px;
     }
 
     h1 {
-        font-size: 32px; 
-        letter-spacing: 2mm;
-        word-wrap: break-word; 
+        margin-top: auto;
+        font-size: 30px; 
+        letter-spacing: 1mm;
+        word-wrap: break-word;
     }
 
     main h2 {
@@ -432,6 +444,7 @@ button[type="submit"]:hover {
     nav ul {
         flex-direction: column; /* stack menu items vertically */
         gap: 10px;
+        padding: 0;
     }
 
     nav ul li {
@@ -440,14 +453,13 @@ button[type="submit"]:hover {
     }
 
     main {
-        padding: 10px;
         background-color: transparent;
         width: 100%;
         max-width: 100%; 
-        margin: 0; 
         box-shadow: 0 0 15px var(--highlight-color); /* Add highlight effect on edges */
     }
 
+  
     .video-container img {
         max-width: 100%;
         height: auto; /* Ensure images scale properly */
@@ -475,6 +487,17 @@ button[type="submit"]:hover {
     /* ensure custom cursor doesn't interfere with touch screens */
     * {
         cursor: auto !important;
+    }
+
+    .container {
+        margin: auto;
+        padding: 10px 10px 10px 10px;
+    }
+
+    a {
+        margin-left: -10px;
+        margin-right: -10px;
+
     }
 }
 
