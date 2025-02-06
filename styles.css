@@ -2,9 +2,9 @@
 :root {
     --primary-color: #e3312b;
     --secondary-color: #149954;
-    --background-color:#f3ead79a;
+    --background-color: rgba(248, 249, 250, 0.665);
     --text-color: #333;
-    --highlight-color: #f3ead7d3;
+    --highlight-color: #f1f2f2;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --font-family: 'baskerville', Arial, sans-serif;
     --max-width: 1200px;
@@ -33,7 +33,7 @@ body {
 
 @font-face {
     font-family: "handwritten!", Arial, sans-serif;
-    src: url('/fonts/vertopal.com_Handwritten!.ttf');
+    src: url('/fonts/handwritten!/vertopal.com_Handwritten!.ttf');
 }
 
 header {
@@ -398,24 +398,88 @@ button[type="submit"]:hover {
     }
 }
 
-/* landscape mode (mobile only) */
-@media (max-width: 800px) {
-    #rotate-message {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.8);
-        color: var(--highlight-color);
-        padding: 20px;
-        text-align: center;
-        border-radius: 10px;
-        z-index: 1000;
-        width: 80%;
-        font-family: var(--font-family);
-        box-shadow: var(--box-shadow);
+/* Improve Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; 
+        padding: 16px;
+        overflow-x: hidden; 
     }
+
+    header {
+        padding: 10px;
+        background-color: var(--highlight-color);
+        width: 100%;
+        max-width: 100%; 
+        margin: auto; 
+    }
+
+    h1 {
+        font-size: 32px; 
+        letter-spacing: 2mm;
+        word-wrap: break-word; 
+    }
+
+    main h2 {
+        font-size: 20px; 
+        letter-spacing: -.01em; 
+        line-height: 1.20em; 
+        text-align: center; 
+        margin: 15px 0; 
+        word-wrap: break-word; 
+    }
+
+    nav ul {
+        flex-direction: column; /* stack menu items vertically */
+        gap: 10px;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    main {
+        padding: 10px;
+        background-color: transparent;
+        width: 100%;
+        max-width: 100%; 
+        margin: 0; 
+        box-shadow: 0 0 15px var(--highlight-color); /* Add highlight effect on edges */
+    }
+
+    .video-container img {
+        max-width: 100%;
+        height: auto; /* Ensure images scale properly */
+    }
+
+    footer {
+        padding: 10px;
+        background-color: var(--highlight-color);
+        width: 100%;
+        max-width: 100%; 
+        margin: auto; 
+    }
+
+    .social-links img {
+        width: 32px; 
+        height: 32px;
+    }
+
+    /* improve touch targets */
+    button[type="submit"], a {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    /* ensure custom cursor doesn't interfere with touch screens */
+    * {
+        cursor: auto !important;
+    }
+}
+
+
+
 
     #content {
         transition: none
@@ -424,5 +488,4 @@ button[type="submit"]:hover {
     .blur {
         filter: blur(10px);
     }
-}
 
