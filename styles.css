@@ -423,7 +423,6 @@ button[type="submit"]:hover {
 
 
 .mySlides {
-    height: 300px;
     align-content: center;
     display: block;
     margin: 0 auto;
@@ -452,6 +451,14 @@ button[type="submit"]:hover {
     position: relative;
 }
 
+.articleimg {
+    width: 450px;
+}
+.recipe-image img {
+    max-width: 100%;
+    height: auto;
+}
+
 .article-content {
     flex: 2;
     text-align: left;
@@ -467,20 +474,6 @@ button[type="submit"]:hover {
     border-left: var(--text-color);
 }
 
-.recipe-image {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.recipe-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding-bottom: 2px;
-}
-
-
 figcaption {
     font-style: italic;
     font-size: 0.9em;
@@ -489,8 +482,12 @@ figcaption {
     text-align: center;
 }
 
-figure {
+figure img{
     align-content: center;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
@@ -554,11 +551,6 @@ figure {
     margin-top: 18px;
     line-height: 21px;
 }
-
-.articleimg figcaption {
-    margin-top: -10px;
-}
-
 
 
 /* Improve Mobile Responsiveness */
@@ -634,6 +626,10 @@ figure {
         font-family: "handwritten!";
     }
 
+    .articleimg {
+        align-content: center;
+        max-width: fit-content;
+    }
 
     nav ul {
         flex-direction: column; /* stack menu items vertically */
@@ -688,23 +684,11 @@ figure {
     .recipe-image img {
         max-width: 100%;
         height: auto;
+
     }
 
-    figure {
-        padding: 0;
-        display: block;
-        margin: 0 auto;
-        max-height: 100%;
-        max-width: 100%;
-    }
+    
 
-    .articleimg {
-        padding: 0;
-        display: block;
-        margin: 0 auto;
-        max-height: 100%;
-        max-width: 100%;
-    }
 }
 
 
@@ -737,4 +721,3 @@ figure {
     .blur {
         filter: blur(10px);
     }
-
