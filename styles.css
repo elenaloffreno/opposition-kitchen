@@ -593,21 +593,6 @@ figure img{
     .article-content {
         border-right: none;}
 
-    .recipe-info h2 {
-        font-size: 12px;
-        margin-bottom: 5px;
-        line-height: 1.2;
-        word-spacing: 8px;
-    }
-
-    .recipe-info p {
-        margin: 5px 0;
-        color: var(--text-color);
-        font-size: 10px;
-        line-height: 1.0;
-    }
-
-
     main h2 {
         font-size: 20px; 
         letter-spacing: -.01em; 
