@@ -19,20 +19,8 @@ function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-function checkOrientation() {
-    if (isMobileDevice()) {
-        if (window.innerHeight > window.innerWidth) {
-            document.getElementById('rotate-message').style.display = 'block';
-            document.getElementById('content').classList.add('blur');
-        } else {
-            document.getElementById('rotate-message').style.display = 'none';
-            document.getElementById('content').classList.remove('blur');
-        }
-    } else {
-        document.getElementById('rotate-message').style.display = 'none';
-        document.getElementById('content').classList.remove('blur');
-    }
-}
 
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('load', checkOrientation);
+
+
