@@ -555,7 +555,7 @@ figure img{
 
 
 
-/* Improve Mobile Responsiveness */
+/* Improve Small Desktop Responsiveness */
 @media (max-width: 1000px) {
     body {
         font-size: 16px; 
@@ -602,10 +602,11 @@ figure img{
 
     .recipe-info p {
         margin: 5px 0;
-        color: #555;
+        color: var(--text-color);
         font-size: 10px;
         line-height: 1.0;
     }
+
 
     main h2 {
         font-size: 20px; 
@@ -650,7 +651,7 @@ figure img{
         max-width: 100%; 
     }
 
-  
+
     .video-container img {
         padding: 0;
         display: block;
@@ -724,6 +725,189 @@ figure img{
     .blur {
         filter: blur(10px);
     }
+
+
+
+
+/* Mobile Improvements */
+    @media (max-width: 750px){
+    
+        body {
+            font-size: 16px; 
+            padding-top: 10px;
+            overflow-x: hidden; 
+        }
+    
+    
+        main#content {
+            box-sizing: border-box;
+          }
+          
+          img.video {
+            display: block;
+          }
+    
+    
+        header {
+            background-color: var(--highlight-color);
+            width: 100%;
+            max-width: 100%; 
+            padding-top: 10x;
+            padding-left: 0;
+            margin-top: -10px;
+        }
+    
+        h1 {
+            margin-top: auto;
+            font-size: 30px; 
+            letter-spacing: 1mm;
+            word-wrap: break-word;
+            font-family: "handwritten!";
+        }
+    
+        .article-content {
+            border-right: none;}
+    
+        .recipe-info h2 {
+            font-size: 12px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            word-spacing: 8px;
+        }
+    
+        .recipe-info p {
+            margin: 5px 0;
+            color: var(--text-color);
+            font-size: 10px;
+            line-height: 1.0;
+        }
+    
+    
+        main h2 {
+            font-size: 20px; 
+            letter-spacing: -.01em; 
+            line-height: 1.20em; 
+            text-align: center; 
+            margin: 15px 0; 
+            word-wrap: break-word; 
+            font-family: "handwritten!";
+        }
+    
+    
+        .article h2 {
+            font-size: 20px; 
+            letter-spacing: -4px; 
+            line-height: 1.20em;
+            word-spacing: 18px; 
+            text-align: center; 
+            margin: 15px 0; 
+            word-wrap: break-word; 
+            font-family: "handwritten!";
+        }
+    
+        .articleimg {
+            align-content: center;
+            max-width: fit-content;
+        }
+    
+        nav ul {
+            flex-direction: column; /* stack menu items vertically */
+            gap: 10px;
+        }
+    
+        nav ul li {
+            text-align: center;
+            width: 100%;
+        }
+    
+        main {
+            background-color: transparent;
+            width: 100%;
+            max-width: 100%; 
+        }
+    
+    
+        .video-container img {
+            padding: 0;
+            display: block;
+            margin: 0 auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    
+        footer {
+            padding: 10px;
+            background-color: var(--highlight-color);
+            width: 100%;
+            max-width: 100%; 
+            margin: auto; 
+        }
+    
+        .social-links img {
+            width: 32px; 
+            height: 32px;
+        }
+    
+        .recipe-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .recipe-image {
+            order: -1;
+        }
+        .recipe-content, .article-content, .recipe-details {
+            flex: 1;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .recipe-image img {
+            max-width: 100%;
+            height: auto;
+    
+        }
+    
+    
+        /* improve touch targets */
+        button[type="submit"], a {
+            padding: 15px;
+            font-size: 18px;
+        }
+    
+        /* ensure custom cursor doesn't interfere with touch screens */
+     
+        .container {
+            margin: auto;
+            padding: 10px 10px 10px 10px;
+        }
+    
+        a {
+            margin-left: -10px;
+            margin-right: -10px;
+    
+        }
+    
+    
+    
+    
+        #content {
+            transition: none
+        }
+    
+        .blur {
+            filter: blur(10px);
+        }
+    
+
+    .recipe {    
+        display:inline-block;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+    
+}
 
 
 
