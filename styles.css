@@ -553,6 +553,8 @@ figure img{
 }
 
 
+
+
 /* Improve Mobile Responsiveness */
 @media (max-width: 1000px) {
     body {
@@ -592,17 +594,17 @@ figure img{
         border-right: none;}
 
     .recipe-info h2 {
-        font-size: 18px;
+        font-size: 12px;
         margin-bottom: 5px;
-        line-height: 20px;
+        line-height: 1.2;
         word-spacing: 8px;
     }
 
     .recipe-info p {
         margin: 5px 0;
         color: #555;
-        font-size: 14px;
-        line-height: 1.4;
+        font-size: 10px;
+        line-height: 1.0;
     }
 
     main h2 {
@@ -614,6 +616,7 @@ figure img{
         word-wrap: break-word; 
         font-family: "handwritten!";
     }
+
 
     .article h2 {
         font-size: 20px; 
@@ -721,3 +724,6 @@ figure img{
     .blur {
         filter: blur(10px);
     }
+
+
+
