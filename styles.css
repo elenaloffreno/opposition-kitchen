@@ -451,9 +451,6 @@ button[type="submit"]:hover {
     position: relative;
 }
 
-.articleimg {
-    width: 450px;
-}
 .recipe-image img {
     max-width: 100%;
     height: auto;
@@ -488,6 +485,7 @@ figure img{
     margin: 0 auto;
     max-height: 100%;
     max-width: 100%;
+    padding-top: .35em;
 }
 
 
@@ -593,6 +591,21 @@ figure img{
     .article-content {
         border-right: none;}
 
+    .recipe-info h2 {
+        font-size: 12px;
+        margin-bottom: 5px;
+        line-height: 1.2;
+        word-spacing: 8px;
+    }
+
+    .recipe-info p {
+        margin: 5px 0;
+        color: var(--text-color);
+        font-size: 10px;
+        line-height: 1.0;
+    }
+
+
     main h2 {
         font-size: 20px; 
         letter-spacing: -.01em; 
@@ -613,11 +626,6 @@ figure img{
         margin: 15px 0; 
         word-wrap: break-word; 
         font-family: "handwritten!";
-    }
-
-    .articleimg {
-        align-content: center;
-        max-width: fit-content;
     }
 
     nav ul {
@@ -788,11 +796,6 @@ figure img{
             margin: 15px 0; 
             word-wrap: break-word; 
             font-family: "handwritten!";
-        }
-    
-        .articleimg {
-            align-content: center;
-            max-width: fit-content;
         }
     
         nav ul {
