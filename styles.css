@@ -237,10 +237,15 @@ footer {
 .recipe-list {
     list-style-type: none;
     padding: 0;
+    
 }
 
 .recipe-list a {
     text-decoration: none;
+}
+
+.recipe-list li {
+    margin-top: -30px;
 }
 
 .recipe {
@@ -552,7 +557,6 @@ figure img{
 
 
 
-
 /* Improve Small Desktop Responsiveness */
 @media (max-width: 1000px) {
     body {
@@ -588,11 +592,15 @@ figure img{
         font-family: "handwritten!";
     }
 
+    .recipe-list li {
+        margin-top: -30px;
+    }
+
     .article-content {
         border-right: none;}
 
     .recipe-info h2 {
-        font-size: 12px;
+        font-size: 20px;
         margin-bottom: 5px;
         line-height: 1.2;
         word-spacing: 8px;
@@ -601,7 +609,7 @@ figure img{
     .recipe-info p {
         margin: 5px 0;
         color: var(--text-color);
-        font-size: 10px;
+        font-size: 16px;
         line-height: 1.0;
     }
 
@@ -684,6 +692,11 @@ figure img{
 
     }
 
+    .thanks {
+        margin-top: -60px;
+        padding-top: 0;
+    }
+
     
 
 }
@@ -762,7 +775,7 @@ figure img{
             border-right: none;}
     
         .recipe-info h2 {
-            font-size: 12px;
+            font-size: 16px;
             margin-bottom: 5px;
             line-height: 1.2;
             word-spacing: 8px;
@@ -771,8 +784,11 @@ figure img{
         .recipe-info p {
             margin: 5px 0;
             color: var(--text-color);
-            font-size: 10px;
+            font-size: 14px;
             line-height: 1.0;
+        }
+        .recipe-list li {
+            margin-top: 0px;
         }
     
     
@@ -786,6 +802,10 @@ figure img{
             font-family: "handwritten!";
         }
     
+        .thanks {
+            margin-top: -60px;
+            padding-top: 0;
+        }
     
         .article h2 {
             font-size: 20px; 
