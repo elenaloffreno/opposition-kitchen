@@ -23,4 +23,25 @@ function isMobileDevice() {
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('load', checkOrientation);
 
+// header and footer//
 
+document.addEventListener("DOMContentLoaded", function () {
+    loadComponent("header.html", "header-container");
+    loadComponent("footer.html", "footer-container");
+});
+
+function loadComponent(url, elementId) {
+    console.log(`Loading ${url} into #${elementId}`); // Debug log
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${url}, status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(`${url} loaded successfully.`); // Debug log
+            document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error("Error loading component:", error));
+}
