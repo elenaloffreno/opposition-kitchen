@@ -157,51 +157,24 @@ if (wordElement) {
 document.addEventListener("DOMContentLoaded", function () {
     loadComponent("components/header.html", "header-container");
     loadComponent("components/footer.html", "footer-container");
-    loadComponent("components/share.html","share-links")    
+    loadComponent("components/share.html", "share-links");
+    
+    // Date elements are now handled in the loadComponent function
+    // when containerId === "share-links"
 });
 
-// Function to Load HTML Components into the Page
-function loadComponent(url, containerId) {
-    console.log(`Attempting to load ${url} into #${containerId}`);
-    
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                console.error(`Failed to load ${url}: ${response.statusText}`);
-                throw new Error(`Failed to load ${url}: ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then(html => {
-            const container = document.getElementById(containerId);
-            
-            // Check if this is a share component and has custom date attributes
-            if (containerId === "share-links" && container.hasAttribute("data-publish-date")) {
-                const publishDate = container.getAttribute("data-publish-date");
-                const publishDateFormatted = container.getAttribute("data-publish-date-formatted");
-                
-                // Replace placeholders with custom dates
-                html = html.replace("{{article-date}}", publishDate);
-                html = html.replace("{{article-date-formatted}}", publishDateFormatted);
-            }
-            
-            container.innerHTML = html;
-            console.log(`Successfully loaded ${url}`);
-        })
-        .catch(error => {
-            console.error(`Error loading ${url}:`, error);
-        });
-}
-
-// date published
-
-document.addEventListener('DOMContentLoaded', function() {
+// Function to initialize share buttons
+function initializeShareButtons() {
     // Get all share buttons
     const shareButtons = document.querySelectorAll('.share-btn');
     
+    console.log('Initializing share buttons:', shareButtons.length);
+    
     // Add click event listener to each button
     shareButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
             // Get the platform from data attribute
             const platform = this.dataset.platform;
             
@@ -218,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Open share dialog in a new window
             if (shareUrls[platform]) {
+                console.log(`Sharing to ${platform}: ${shareUrls[platform]}`);
                 window.open(shareUrls[platform], '_blank');
             }
         });
@@ -238,4 +212,49 @@ document.addEventListener('DOMContentLoaded', function() {
             elem.textContent = formattedDate;
         }
     });
-});
+}
+
+// Function to Load HTML Components into the Page
+function loadComponent(url, containerId) {
+    console.log(`Attempting to load ${url} into #${containerId}`);
+    
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                console.error(`Failed to load ${url}: ${response.statusText}`);
+                throw new Error(`Failed to load ${url}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById(containerId);
+            
+            if (!container) {
+                console.error(`Container #${containerId} not found`);
+                return;
+            }
+            
+            // Check if this is a share component and has custom date attributes
+            if (containerId === "share-links" && container.hasAttribute("data-publish-date")) {
+                const publishDate = container.getAttribute("data-publish-date");
+                const publishDateFormatted = container.getAttribute("data-publish-date-formatted");
+                
+                // Replace placeholders with custom dates
+                html = html.replace(/{{article-date}}/g, publishDate);
+                html = html.replace(/{{article-date-formatted}}/g, publishDateFormatted);
+            }
+            
+            container.innerHTML = html;
+            console.log(`Successfully loaded ${url} into #${containerId}`);
+            
+            // Initialize share buttons if this is the share component
+            if (containerId === "share-links") {
+                setTimeout(() => {
+                    initializeShareButtons();
+                }, 100); // Small delay to ensure DOM is updated
+            }
+        })
+        .catch(error => {
+            console.error(`Error loading ${url}:`, error);
+        });
+}
