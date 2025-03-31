@@ -17,8 +17,9 @@ html, body {
 }
 
 body, a, input, textarea, button {
-    cursor: none;
+    cursor: none !important;
 }
+
 
 body {
     margin: 0;
@@ -72,12 +73,11 @@ h3 {
 .title {
     display: inline-block;
     color: var(--primary-color);
-    transition: transform 0.2s, color var(--transition-duration);
+    transition: transform 0.05s, color var(--transition-duration);
 }
 
 .title:hover {
     transform: scale(1.1);
-    color: var(--secondary-color);
 }
 
 .wiggle {
@@ -93,7 +93,7 @@ nav ul {
     list-style: none;
     padding: .75em;
     display: flex;
-    gap: 30px;
+    gap: 0px;
     justify-content: center;
     margin: 20px 0 0;
 }
@@ -118,13 +118,13 @@ nav a {
     color: var(--secondary-color);
     padding: 0 .25rem;
     margin: 0 -.25rem;
-    transition: color .75s ease-in-out, box-shadow .75s ease-in-out;
+    transition: color .2s ease-in-out, box-shadow .75s ease-in-out;
   }
 
 
 nav a:hover {
-    color:var(--background-color);
-  box-shadow: inset 300px 0 0 0 var(--primary-color);;
+    color:var(--primary-color);
+  
 }
 
 
@@ -161,11 +161,11 @@ a {
 }
 
 a:hover {
-    color: var(--secondary-color); 
+    color: var(--primary-color); 
 }
 
 a:active {
-    color: darken(var(--secondary-color), 80%); 
+    color: darken(var(--primary-color)80%); 
 }
 
 /* footer styling */
@@ -195,9 +195,6 @@ footer {
     transition: opacity var(--transition-duration);
 }
 
-.social-links a img:hover {
-    opacity: 0.5;
-}
 
 .footer-bottom p {
     font-family: "handwritten!", "baskerville";
@@ -208,16 +205,27 @@ footer {
     word-spacing: 1em
 }
 
-/* cursor styling */
 
+/* cursor styling */
 
 #cursor {
     position: fixed;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Keep the main cursor filled with red */
     pointer-events: none;
     border-radius: 50%;
-    transition: width 0.2s linear, height 0.2s linear;
+    transition: width 0.1s linear, height 0.1s linear;
     z-index: 9999;
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998; /* Below the main cursor */
+    background-color: var(--secondary-color); /* Match the main cursor color */
+    transition: width 0.5s ease, height 0.5s ease;
 }
 
 
@@ -231,22 +239,19 @@ footer {
 .directory h1 {
     text-align: center;
     font-size: 2.5em;
-    color: #333;
+    color: var(--text-color);
+
 }
 
 .recipe-list {
     list-style-type: none;
-    padding: 0;
-    
+    padding: auto;
 }
 
 .recipe-list a {
     text-decoration: none;
 }
 
-.recipe-list li {
-    margin-top: -30px;
-}
 
 .recipe {
     display: flex;
@@ -254,9 +259,9 @@ footer {
     padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin-bottom: 10px;
     background-color: #fff;
     transition: background-color 0.3s;
+    margin-top: -15px;
 }
 
 .recipe:hover {
@@ -437,8 +442,8 @@ button[type="submit"]:hover {
 }
 
 .slideshow {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 
@@ -456,6 +461,26 @@ button[type="submit"]:hover {
     position: relative;
 }
 
+.recipe-container .article-content {
+    flex: 2;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    position: relative;
+    border-right: solid var(--highlight-color);
+    border-width: 3px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.recipe-container .recipe-details {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-left: -.5em;
+}
+
 .recipe-image img {
     max-width: 100%;
     height: auto;
@@ -467,6 +492,11 @@ button[type="submit"]:hover {
     font-size: 18px;
     line-height: 1.8;
     position: relative;
+    border-right: solid var(--highlight-color);
+    border-width: 3px;
+    align-content: left;
+    padding-left: 25px;
+    padding-right: 25px
 }
 
 .recipe-content {
@@ -500,13 +530,6 @@ figure img{
 
 }
 
-.recipe-details {
-    flex: 1;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-left: -.5em;
-}
 
 .recipe-details h3 {
     font-size: 18px;
@@ -536,15 +559,19 @@ figure img{
     line-height: 30px;
 }
 
-.article-content {
-    border-right: solid var(--highlight-color);
-    border-width: 2.5px;
-    padding-right: 1em;
-}
 
-.article-content p {
-   margin-right: .5em
-}
+
+    .article h2 {
+        font-size: 20px; 
+        letter-spacing: -4px; 
+        line-height: 1.20em;
+        word-spacing: 18px; 
+        text-align: center; 
+        margin: 15px 0; 
+        word-wrap: break-word; 
+        font-family: "handwritten!";
+    }
+
 
 .resources a{
     margin-left: -15px;
@@ -555,7 +582,99 @@ figure img{
     line-height: 21px;
 }
 
+.interviewcontent {
+    max-width: 50%;
+}
 
+.interviewcontent figure {
+    max-width: 100%;
+    width: 100%;
+    height: auto; 
+    display: block;
+    margin: 1em 0;
+}
+
+.interviewcontent p {
+    text-align: left;
+}
+
+.interviewcontent a {
+    padding: 0;
+    margin: 0;
+}
+
+.interviewcontent h3 {
+    font-family: "baskerville";
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 21px;
+    word-spacing: 2px;
+    text-align: left;
+}
+
+.interviewcontent h2 {
+    font-size: 20px; 
+    letter-spacing: -4px; 
+    line-height: 1.20em;
+    word-spacing: 18px; 
+    text-align: left; 
+    margin: 15px 0; 
+    word-wrap: break-word; 
+    font-family: "handwritten!";
+    }
+
+
+    .article-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .date-published {
+        margin-left: 18px; /* Gives some space between buttons and date */
+        font-size: 0.9em;
+        font-family: "handwritten!", "baskerville";
+        margin: 10px 0 0;
+        color: #666;
+        letter-spacing: -.32em;
+        word-spacing: 1em
+    }
+
+    .share-links {
+        display: flex;
+        justify-content: flex-start;
+        width: auto;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+    
+    .share-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    
+    .share-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+    .share-btn img {
+        width: 24px;
+        height: 24px;
+    }
 
 /* Improve Small Desktop Responsiveness */
 @media (max-width: 1000px) {
@@ -593,11 +712,8 @@ figure img{
     }
 
     .recipe-list li {
-        margin-top: -30px;
+        margin:auto
     }
-
-    .article-content {
-        border-right: none;}
 
     .recipe-info h2 {
         font-size: 20px;
@@ -636,9 +752,32 @@ figure img{
         font-family: "handwritten!";
     }
 
+    .interviewcontent{
+        margin-top: 15px;
+    }
+    .interviewcontent h2 {
+        font-size: 20px; 
+        letter-spacing: -4px; 
+        line-height: 1.20em;
+        word-spacing: 18px; 
+        text-align: center; 
+        margin: 15px 0; 
+        word-wrap: break-word; 
+        font-family: "handwritten!";
+    }
+
+    .interviewcontent .article-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
     nav ul {
         flex-direction: column; /* stack menu items vertically */
-        gap: 10px;
+        gap: 16px;
     }
 
     nav ul li {
@@ -697,6 +836,9 @@ figure img{
         padding-top: 0;
     }
 
+    .interviewcontent {
+        max-width: 80%;
+    }
     
 
 }
@@ -736,7 +878,7 @@ figure img{
 
 
 /* Mobile Improvements */
-    @media (max-width: 750px){
+    @media (max-width: 768px){
     
         body {
             font-size: 16px; 
@@ -744,12 +886,21 @@ figure img{
             overflow-x: hidden; 
         }
     
+        .share-links {
+            justify-content: center; /* Center on mobile */
+        }
+        
+        .share-buttons {
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+        }
     
+
         main#content {
             box-sizing: border-box;
           }
           
-          img.video {
+        img.video {
             display: block;
           }
     
@@ -790,8 +941,17 @@ figure img{
         .recipe-list li {
             margin-top: 0px;
         }
+
+        .recipe {
+            margin-top: 5px;
+        }
     
-    
+        .article-meta {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
         main h2 {
             font-size: 20px; 
             letter-spacing: -.01em; 
@@ -820,7 +980,7 @@ figure img{
     
         nav ul {
             flex-direction: column; /* stack menu items vertically */
-            gap: 10px;
+            gap: 16px;
         }
     
         nav ul li {
@@ -860,6 +1020,24 @@ figure img{
             flex-direction: column;
             text-align: center;
         }
+
+        .recipe-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .recipe-container .article-content {
+            border-right: none;
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 100%;
+        }
+        
+        .recipe-container .recipe-details {
+            width: 100%;
+            padding: 0 10px;
+        }
+
         .recipe-image {
             order: -1;
         }
@@ -909,13 +1087,26 @@ figure img{
     .recipe {    
         display:inline-block;
         align-items: center;
-        padding: 10px;
         border-radius: 20px;
         margin-bottom: 10px;
         transition: background-color 0.3s;
     }
-    
+
 }
 
 
 
+
+/* SVG Icon Color Styling */
+.share-btn img,
+.social-links img {
+    /* Green color filter matching #588a5b */
+    filter: invert(42%) sepia(45%) saturate(445%) hue-rotate(91deg) brightness(88%) contrast(86%);
+    transition: filter 0.3s ease;
+}
+
+.share-btn:hover img,
+.social-links a:hover img {
+    /* Red color filter matching #B22222 */
+    filter: invert(13%) sepia(83%) saturate(3739%) hue-rotate(354deg) brightness(96%) contrast(84%);
+}
