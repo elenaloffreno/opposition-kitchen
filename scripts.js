@@ -270,13 +270,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1) Show after 5s (adjust as you like)
     setTimeout(() => {
       modal.style.display = "block";
-      content.classList.add("blur");
-    }, 1000);
+    }, 5000);
   
     // 2) Close logic
     function closeModal() {
       modal.style.display = "none";
-      content.classList.remove("blur");
     }
   
     closeBtn.addEventListener("click", closeModal);
