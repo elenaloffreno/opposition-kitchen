@@ -20,6 +20,12 @@ body, a, input, textarea, button {
     cursor: none !important;
 }
 
+.indeximg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
 
 body {
     margin: 0;
@@ -242,12 +248,14 @@ padding-bottom: 20px;
 }
 
 .recipe-list {
-    list-style-type: none;
-    padding: auto;
-}
+    list-style: none;
+    margin: 0;      /* remove any browser margins */
+    padding: 0;     /* kill default UL padding-left */
+  }
 
 .recipe-list a {
     text-decoration: none;
+    margin: 0;
 }
 
 
@@ -259,7 +267,6 @@ padding-bottom: 20px;
     border-radius: 8px;
     background-color: #fff;
     transition: background-color 0.3s;
-    margin-top: -15px;
 }
 
 .recipe:hover {
@@ -270,7 +277,6 @@ padding-bottom: 20px;
     width: 150px;
     height: 150px;
     border-radius: 8px;
-    margin-right: 20px;
     object-fit: cover;
 }
 
@@ -738,8 +744,12 @@ figure img{
     }
 
     .recipe-list li {
-        margin:auto
+        margin:0 0 1em;
     }
+
+    .recipe-list li {
+        margin-bottom: 1rem;  /* add breathing room between cards */
+      }
 
     .recipe-info h2 {
         font-size: 20px;
@@ -813,6 +823,7 @@ figure img{
     .article-content {
         margin-top: 15px;
     }
+
     
     .interviewcontent {
         max-width: 95%;
@@ -887,10 +898,21 @@ figure img{
         height: 32px;
     }
 
-    .recipe-container {
-        flex-direction: column;
-        text-align: center;
+    .recipe-container img {
+        max-width: 100%;
+
     }
+
+    .recipe-container figure {
+        width:fit-content;
+        align-content: center;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+
+    }
+
+
+
     .recipe-image {
         order: -1;
     }
@@ -995,12 +1017,19 @@ figure img{
             padding: 20px 25px;
             margin: 25px 0;
         }
+
+        .recipe {
+            display: inline-block;}
         
         blockquote.pull-quote::before,
         blockquote.pull-quote::after {
             font-size: 34px;
         }
 
+        .recipe-container figure {
+            width: 100%;
+            margin: 0 0 0 0;
+        }
 
         body {
             font-size: 16px; 
@@ -1021,11 +1050,10 @@ figure img{
         }
         
         .container, .recipe-container {
-            width: 95%;
-            max-width: 95%;
-            padding: 10px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
+            max-width: 100%;
+            padding: 0px;
+            margin: 0 0 0 0
         }
     
         .share-links {
@@ -1094,12 +1122,12 @@ figure img{
         }
         .recipe-list li {
             margin-top: 0px;
+            margin-left: -30px;
         }
 
-        .recipe {
-            margin-top: 5px;
-        }
-    
+        .recipe-list {
+            text-align: center;
+          }
 
         main h2 {
             font-size: 20px; 
@@ -1170,10 +1198,6 @@ figure img{
             height: 32px;
         }
     
-        .recipe-container {
-            flex-direction: column;
-            text-align: center;
-        }
 
         .recipe-image {
             order: -1;
@@ -1187,9 +1211,9 @@ figure img{
         }
         
         /* Remove right border when stacked */
-        .article-content,
-        .recipe-container .article-content {
+        .recipe-container {
             border-right: none;
+            margin: 0 0 0 0;
         }
 
         .article-meta {
@@ -1215,6 +1239,7 @@ figure img{
             border-radius: 20px;
             margin-bottom: 10px;
             transition: background-color 0.3s;
+            margin: 5px;
         }
     
         /* improve touch targets */
@@ -1251,6 +1276,14 @@ figure img{
         margin-bottom: 10px;
         transition: background-color 0.3s;
     }
+
+    .recipe-container img {
+        display: flexbox;
+        align-content: center;
+        max-width: 125%;
+        margin-left: -13%;
+    }
+
 
 }
 
