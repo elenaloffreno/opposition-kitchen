@@ -258,3 +258,28 @@ function loadComponent(url, containerId) {
             console.error(`Error loading ${url}:`, error);
         });
 }
+
+// newsletter sub
+
+document.addEventListener("DOMContentLoaded", function() {
+    const modal     = document.getElementById("subscribe-modal");
+    const overlay   = document.querySelector(".modal-overlay");
+    const closeBtn  = document.getElementById("close-modal");
+    const content   = document.getElementById("content");
+  
+    // 1) Show after 5s (adjust as you like)
+    setTimeout(() => {
+      modal.style.display = "block";
+      content.classList.add("blur");
+    }, 1000);
+  
+    // 2) Close logic
+    function closeModal() {
+      modal.style.display = "none";
+      content.classList.remove("blur");
+    }
+  
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+  });
+  
