@@ -976,9 +976,6 @@ figure img{
         transition: none
     }
 
-    .blur {
-        filter: blur(10px);
-    }
 
     blockquote.pull-quote {
         font-family: "handwritten!";
@@ -1285,9 +1282,6 @@ figure img{
             transition: none
         }
     
-        .blur {
-            filter: blur(10px);
-        }
     
 
     .recipe {    
@@ -1373,7 +1367,7 @@ figure img{
     font-family: "handwritten!";
   }
   
-  /* close â€œÃ—â€ */
+  /* close button */
   .modal-close {
     position: absolute;
     top: 0.5rem; right: 0.5rem;
@@ -1383,10 +1377,3 @@ figure img{
     cursor: none;
     color: var(--text-color);
   }
-
-
-  /* blur the page when modal is open */
-  .blur {
-    filter: blur(5px);
-  }
-  
