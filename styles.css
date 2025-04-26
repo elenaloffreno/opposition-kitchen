@@ -22,9 +22,13 @@ body, a, input, textarea, button {
 
 .indeximg {
     display: block;
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
 }
 
 body {
@@ -704,6 +708,17 @@ figure img{
         max-width: 80% !important;
         display: block !important;
         float: none !important;
+    }
+
+    .indeximg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    
     }
 
     .thanks {
