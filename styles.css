@@ -222,7 +222,7 @@ padding-bottom: 20px;
     pointer-events: none;
     border-radius: 50%;
     transition: width 0.1s linear, height 0.1s linear;
-    z-index: 9999;
+    z-index: 10001;
 }
 
 .cursor-trail {
@@ -231,7 +231,7 @@ padding-bottom: 20px;
     height: 10px;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9998; /* Below the main cursor */
+    z-index: 10000; /* Below the main cursor */
     background-color: var(--secondary-color); /* Match the main cursor color */
     transition: width 0.5s ease, height 0.5s ease;
 }
@@ -1321,4 +1321,104 @@ figure img{
 .social-links a:hover img {
     /* Red color filter matching #B22222 */
     filter: invert(13%) sepia(83%) saturate(3739%) hue-rotate(354deg) brightness(96%) contrast(84%);
+}
+
+/* Modal wrapper (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 10000;
+  }
+
+.modal h2 {
+    font-size: 24px;
+    margin-top: 3;
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    font-family: "handwritten!";
+    letter-spacing: -6.25px;
+    word-spacing: 20px;
+    color: var(--secondary-color);
+}
+  
+  /* semi-transparent background */
+  .modal-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+  
+  /* centered white box */
+  .modal-content {
+    position: relative;
+    background: var(--highlight-color);
+    max-width: 500px;
+    margin-top: 85px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: "handwritten!";
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  
+  /* close “×” */
+  .modal-close {
+    position: absolute;
+    top: 0.5rem; right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: none;
+    color: var(--text-color);
+  }
+
+
+  /* blur the page when modal is open */
+  .blur {
+    filter: blur(5px);
+  }
+  
+  /* styles.css */
+  .substack-form {
+    display: flex;
+    flex-direction: column;    /* stack input + button */
+    gap: 0.75rem;              /* space between them */
+    max-width: 500px;          /* control overall width */
+    margin: 1rem auto;         /* center on the page */
+  }
+  
+  .substack-form input {
+    width: 100%;               /* full width of the form */
+    padding: 0.75rem 1rem;     
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .substack-form button {
+    width: 50%;               /* match input width */
+    padding: 0.75rem;
+    font-size: 1rem;
+    letter-spacing: -3px;
+    background: var(--primary-color);
+    color: #fff;
+    font-family: "handwritten!";
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+  }
+
+  .substack-form button[type="submit"]:hover,
+.substack-form button[type="submit"]:focus {
+  background-color:#456f47 !important;
+  transform: none      !important;
+  box-shadow: none     !important;
 }
