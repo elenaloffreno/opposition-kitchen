@@ -262,6 +262,9 @@ padding-bottom: 20px;
     margin: 0;
 }
 
+.recipe-list img {
+    margin-right: 10px;
+}
 
 .recipe {
     display: flex;
@@ -759,12 +762,9 @@ figure img{
     }
 
     .recipe-list li {
-        margin:0 0 1em;
+        margin:0 0 0 0;
     }
 
-    .recipe-list li {
-        margin-bottom: 1rem;  /* add breathing room between cards */
-      }
 
     .recipe-info h2 {
         font-size: 20px;
@@ -1143,6 +1143,10 @@ figure img{
         .recipe-list {
             text-align: center;
           }
+
+        .recipe-list img {
+            margin-right: 0
+        }
 
         main h2 {
             font-size: 20px; 
