@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1) Show after 5s (adjust as you like)
     setTimeout(() => {
       modal.style.display = "block";
-    }, 5000);
+    }, 50000);
   
     // 2) Close logic
     function closeModal() {
