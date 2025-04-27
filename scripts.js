@@ -259,25 +259,76 @@ function loadComponent(url, containerId) {
         });
 }
 
-// newsletter sub
+// newsletter sub (only run if there’s actually a modal on this page)
+const modal = document.querySelector('.modal');
+if (modal) {
+  // show it after 5s
+  setTimeout(() => modal.classList.add('visible'), 5000);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const modal     = document.getElementById("subscribe-modal");
-    const overlay   = document.querySelector(".modal-overlay");
-    const closeBtn  = document.getElementById("close-modal");
-    const content   = document.getElementById("content");
-  
-    // 1) Show after 5s (adjust as you like)
-    setTimeout(() => {
-      modal.style.display = "block";
-    }, 50000);
-  
-    // 2) Close logic
-    function closeModal() {
-      modal.style.display = "none";
+  function closeModal() {
+    modal.classList.remove('visible');
+  }
+
+  // only hook up the close button if it exists
+  const closeBtn = document.getElementById('close-modal');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // only hook up backdrop‐click if overlay exists
+  const overlay = modal.querySelector('.modal-overlay');
+  if (overlay) overlay.addEventListener('click', closeModal);
+}
+
+// clicky sounds (this now will run on every page)
+// 1) Preload your sounds
+const soundPaths = [
+  'sounds/apple.wav',
+  'sounds/chips.wav',
+  'sounds/clang.wav',
+  'sounds/frying.wav',
+  'sounds/pot.wav',
+  'sounds/water.wav',
+  'sounds/yummy.wav',
+];
+const clickSounds = soundPaths.map(src => {
+  const a = new Audio(src);
+  a.preload = 'auto';
+  return a;
+});
+
+// 2) play once on all non‐link mousedowns
+document.addEventListener('click', e => {
+  const link = e.target.closest('a');
+  if (!link) return;           // not a link → ignore
+
+  e.preventDefault();          // stop immediate navigation
+  const href = link.href;
+
+  // figure out what kind of link this is:
+  const isMail = href.startsWith('mailto:');
+  let isExternal = false;
+  try {
+    const url = new URL(href, location.href);
+    isExternal = url.origin !== location.origin;
+  } catch (err) {
+    // malformed URL? just treat as non-external
+  }
+  const isNewTab = link.target === '_blank';
+
+  // play your random click
+  const s = clickSounds[Math.floor(Math.random() * clickSounds.length)];
+  s.currentTime = 0;
+  s.play().catch(() => {});
+
+  // then, once it’s done, open appropriately
+  s.onended = () => {
+    if (isMail || isExternal || isNewTab) {
+      // mailto: or any external/new-tab link → open in new tab
+      window.open(href, '_blank');
+    } else {
+      // same-origin internal link → navigate in-page
+      window.location.href = href;
     }
-  
-    closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
-  });
-  
+  };
+}, true);
+
+
