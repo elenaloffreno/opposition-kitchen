@@ -295,6 +295,8 @@ padding-bottom: 20px;
     font-size: 24px;
     margin-bottom: 10px;
     line-height: 30px;
+    letter-spacing: -8px;
+    word-spacing: 20px;
 }
 
 .recipe-info p {
@@ -713,6 +715,14 @@ figure img{
         float: none !important;
     }
 
+    .recipe-info h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        line-height: 30px;
+        word-spacing: 20px;
+        letter-spacing: -6px;
+    }
+
     .indeximg {
         display: block;
         max-width: 100%;
@@ -763,14 +773,6 @@ figure img{
 
     .recipe-list li {
         margin:0 0 0 0;
-    }
-
-
-    .recipe-info h2 {
-        font-size: 20px;
-        margin-bottom: 5px;
-        line-height: 1.2;
-        word-spacing: 8px;
     }
 
     .recipe-info p {
@@ -1115,8 +1117,9 @@ figure img{
         .recipe-info h2 {
             font-size: 16px;
             margin-bottom: 5px;
-            line-height: 1.2;
-            word-spacing: 8px;
+            line-height: 24px;
+            word-spacing: 20px;
+            letter-spacing: -6px;
         }
     
         .recipe-info p {
