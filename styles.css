@@ -16,10 +16,6 @@ html, body {
     overflow-y: auto; /* allow vertical scrolling */
 }
 
-body, a, input, textarea, button {
-    cursor: none !important;
-}
-
 .indeximg {
     display: block;
     max-width: 75%;
@@ -216,25 +212,14 @@ padding-bottom: 20px;
 
 /* cursor styling */
 
-#cursor {
-    position: fixed;
-    background-color: var(--secondary-color); /* Keep the main cursor filled with red */
-    pointer-events: none;
-    border-radius: 50%;
-    transition: width 0.1s linear, height 0.1s linear;
-    z-index: 10002;
+html {
+    cursor: url('fork.png') 16 91, auto;
 }
 
-.cursor-trail {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10001; /* Below the main cursor */
-    background-color: var(--secondary-color); /* Match the main cursor color */
-    transition: width 0.5s ease, height 0.5s ease;
+a:hover {
+    cursor: url('fork2.png') 16 91, auto;
 }
+
 
 
 /* directory */
@@ -371,7 +356,7 @@ button[type="submit"] {
     font-size: 1.2rem;
     margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: none;
+    cursor: url('fork2.png') 16 91, auto ;
     font-family: 'baskerville', Arial, sans-serif;
 }
 
@@ -688,7 +673,7 @@ figure img{
     .share-btn {
         background: none;
         border: none;
-        cursor: pointer;
+        cursor: url('fork2.png') 16 91, auto;
         padding: 5px;
         border-radius: 50%;
         transition: background-color 0.3s;
@@ -1397,21 +1382,7 @@ figure img{
     background: transparent;
     border: none;
     font-size: 1.5rem;
-    cursor: none;
-    color: var(--text-color);
+    cursor: url('fork2.png') 16 91, auto;
   }
 
 
-  .mute-button {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    z-index: 10003;
-    width: 24px;
-    height: 24px;
-  }
-  
